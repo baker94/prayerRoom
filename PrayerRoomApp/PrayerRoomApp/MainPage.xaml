@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="PrayerRoomApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PrayerRoomApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <StackPanel HorizontalAlignment="Center" Height="275" VerticalAlignment="Center" Width="300" >
+            <Image x:Name="image" Height="93" VerticalAlignment="Top" HorizontalAlignment="Center" Width="247" Source="/images/poster1.jpg"/>
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal" Width="300"  Margin="0,30">
+                <Button x:Name="GirlsButton" Content="Button" Height="150" Width="150" Click="GirlsButton_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Ellipse Height="150" Width="150" Stroke="Silver" VerticalAlignment="Top"  RenderTransformOrigin="0.54,0.12" HorizontalAlignment="Right">
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="images/girls.png"/>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="BoysButton" Content="Button" Height="150" Width="150" Click="BoysButton_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Ellipse Height="150" Width="150" Stroke="Silver" VerticalAlignment="Top"  HorizontalAlignment="Left">
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="images/aaa.png"/>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

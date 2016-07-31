@@ -1,0 +1,195 @@
+﻿<Page
+    x:Class="PrayerRoomApp.PrayerInfo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PrayerRoomApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <FlipView IsEnabled="False" x:Name="myFlipview" Grid.RowSpan="3" >
+            <Grid HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                <Button x:Name="girlsButton" Visibility="Collapsed" HorizontalAlignment="Left"  VerticalAlignment="Top"  Content="Button" Height="77" Width="150" Click="GirlsButton_Click" >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <StackPanel Name="backStackP" Orientation="Horizontal" HorizontalAlignment="Left"   VerticalAlignment="Top">
+                                <Image x:Name="girlBack" HorizontalAlignment="Right"  VerticalAlignment="Center" Width="40" Height="40" Source="/images/back2.png" />
+                                <Image x:Name="Back" HorizontalAlignment="Right"  VerticalAlignment="Top" Width="77" Height="77" Source="/images/girls.png" />
+                            </StackPanel>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="BoysButton" Visibility="Collapsed" HorizontalAlignment="Left"  VerticalAlignment="Top"  Content="Button" Height="77" Width="150" Click="BoysButton_Click" >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <StackPanel Name="backStackP" Orientation="Horizontal" HorizontalAlignment="Left"   VerticalAlignment="Top">
+                                <Image x:Name="girlBack" HorizontalAlignment="Right"  VerticalAlignment="Center" Width="40" Height="40" Source="/images/back2.png" />
+                                <Image x:Name="Back" HorizontalAlignment="Right"  VerticalAlignment="Top" Width="77" Height="77" Source="/images/aaa.png" />
+                            </StackPanel>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <StackPanel Name="loading" Visibility="Visible" HorizontalAlignment="Center" Height="258"  VerticalAlignment="Center" Width="290">
+                    <Image x:Name="image" Visibility="Visible" Height="93" VerticalAlignment="Top" HorizontalAlignment="Center" Width="247" Source="/images/poster1.jpg"/>
+                    <Image x:Name="noConnectionImage" Visibility="Collapsed"  VerticalAlignment="Top" HorizontalAlignment="Center" Width="150" Source="/images/No-Connection.jpg"/>
+                    <Image x:Name="image1" Visibility="Visible" Height="69" Source="/images/load.gif" Margin="10" />
+                    <TextBlock x:Name="NoConnectionTextBlock" Visibility="Collapsed" TextAlignment="Center" VerticalAlignment="Bottom" TextWrapping="Wrap" FontSize="30" Text="No Connection!!" Height="60" HorizontalAlignment="Stretch" />
+                </StackPanel>
+                <Image x:Name="image2" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="23" Source="/images/slide1.jpg" Margin="0,0,0,15" />
+                <TextBlock x:Name="textBlock" Visibility="Collapsed" TextAlignment="Center" VerticalAlignment="Bottom" TextWrapping="Wrap" Text="00:00" Height="23" Width="100" Margin="0,0,0,50"/>
+
+                <StackPanel Name="controlStackP" Visibility="Collapsed"  Height="240"  HorizontalAlignment="Stretch" VerticalAlignment="Center" >
+                    <Image x:Name="imageCanEnter"  Visibility="Visible" VerticalAlignment="Top" Source="/images/u_can_enter.png" Height="100"/>
+                    <Image x:Name="imageCantEnter"  Visibility="Collapsed" VerticalAlignment="Top" Source="/images/u_cant_enter.png" Height="100"/>
+                    <TextBlock x:Name="enterTextBlock" TextAlignment="Center" VerticalAlignment="Bottom" TextWrapping="Wrap" FontSize="30" Text="You can enter" Height="60" HorizontalAlignment="Stretch" />
+                    <TextBlock x:Name="whoseInTextBlock" TextAlignment="Center" VerticalAlignment="Bottom" TextWrapping="Wrap" FontSize="30" Text="MUSALLAH is empty" Height="60" HorizontalAlignment="Stretch" />
+                </StackPanel>
+                <Button x:Name="notificationButton1" Visibility="Collapsed" VerticalAlignment="Top" HorizontalAlignment="Right"  Content="Button" Height="50" Width="50" Click="notificationButton1_Click" >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image x:Name="notificationImage"  Visibility="Visible" VerticalAlignment="Top" HorizontalAlignment="Right" Source="/images/notification.png" Height="50"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <StackPanel Name="notPanel" BorderThickness="1" BorderBrush="Black" Background="White" Visibility="Collapsed" HorizontalAlignment="Right" Height="230"  VerticalAlignment="Top" Width="200">
+                    <Button x:Name="notButton" Visibility="Visible" HorizontalAlignment="Right"  VerticalAlignment="Top"  Content="Button" Height="20" Width="20" Click="notificationButton_Click" >
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image x:Name="notImage"  Visibility="Visible"  Source="/images/exitNot.png" Height="20"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="onNotButton" Visibility="Collapsed" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="10,0,0,0"  Content="Button" Click="on_Click" >
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image x:Name="onNotImage"  Visibility="Visible" VerticalAlignment="Top" Source="/images/on.png" Height="30"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button x:Name="offNotButton" Visibility="Visible" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="10,0,0,0" Click="off_Click" >
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image x:Name="notImage"  Visibility="Visible" VerticalAlignment="Top" Source="/images/off.png" Height="30"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <TextBlock x:Name="notTextBlock" Margin="10,10,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  Height="25" TextWrapping="Wrap" Text="remember me before:" Width="170"/>
+                    <StackPanel HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="10,0,0,0">
+                        <RadioButton Name="rb1" IsEnabled="False" IsChecked="True" GroupName="notGroup">1 minute</RadioButton>
+                        <RadioButton Name="rb2" IsEnabled="False" GroupName="notGroup">2 minutes</RadioButton>
+                        <RadioButton Name="rb3" IsEnabled="False" GroupName="notGroup">3 minutes</RadioButton>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+
+            <Grid Name="prayerTimesG" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                <Button x:Name="girlsButton2" Visibility="Collapsed" HorizontalAlignment="Left"  VerticalAlignment="Top"  Content="Button" Height="77" Width="150" Click="GirlsButton_Click" >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <StackPanel Name="backStackP" Orientation="Horizontal" HorizontalAlignment="Left"   VerticalAlignment="Top">
+                                <Image x:Name="girlBack" HorizontalAlignment="Right"  VerticalAlignment="Center" Width="40" Height="40" Source="/images/back2.png" />
+                                <Image x:Name="Back" HorizontalAlignment="Right"  VerticalAlignment="Top" Width="77" Height="77" Source="/images/girls.png" />
+                            </StackPanel>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="BoysButton2" Visibility="Collapsed" HorizontalAlignment="Left"  VerticalAlignment="Top"  Content="Button" Height="77" Width="150" Click="BoysButton_Click" >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <StackPanel Name="backStackP" Orientation="Horizontal" HorizontalAlignment="Left"   VerticalAlignment="Top">
+                                <Image x:Name="girlBack" HorizontalAlignment="Right"  VerticalAlignment="Center" Width="40" Height="40" Source="/images/back2.png" />
+                                <Image x:Name="Back" HorizontalAlignment="Right"  VerticalAlignment="Top" Width="77" Height="77" Source="/images/aaa.png" />
+                            </StackPanel>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <StackPanel Name="NoConnectionPanel1" Visibility="Collapsed" HorizontalAlignment="Center" Height="258"  VerticalAlignment="Center" Width="290">
+                    <Image x:Name="noConnectionImage2" Visibility="Visible"  VerticalAlignment="Top" HorizontalAlignment="Center" Width="150" Source="/images/No-Connection.jpg"/>
+                    <TextBlock x:Name="NoConnectionTextBlock2" Visibility="Visible" TextAlignment="Center" VerticalAlignment="Bottom" TextWrapping="Wrap" FontSize="30" Text="No Connection!!" Height="60" HorizontalAlignment="Stretch" />
+                </StackPanel>
+                <Image x:Name="image3" VerticalAlignment="Bottom" Height="23" Source="/images/slide2.jpg" Margin="0,0,0,15" />
+                <StackPanel Name="PrayerPanerl" HorizontalAlignment="Center"  VerticalAlignment="Center"  >
+                    <TextBlock x:Name="prayerTextBlock" TextAlignment="Center" VerticalAlignment="Bottom" TextWrapping="Wrap" FontSize="30" Text="Prayers Time" Height="60" />
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Height="330" Width="260"  >
+                        <StackPanel HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Height="330" >
+                            <TextBlock x:Name="fajrTextBlock" TextAlignment="Left" VerticalAlignment="Bottom" TextWrapping="Wrap" FontSize="30" Text="Fajr" Height="60" HorizontalAlignment="Stretch" />
+                            <TextBlock x:Name="zuhrTextBlock" TextAlignment="Left" VerticalAlignment="Bottom" TextWrapping="Wrap" FontSize="30" Text="Dhuhor" Height="60" HorizontalAlignment="Stretch" />
+                            <TextBlock x:Name="asrTextBlock" TextAlignment="Left" VerticalAlignment="Bottom" TextWrapping="Wrap" FontSize="30" Text="Asr" Height="60" HorizontalAlignment="Stretch" />
+                            <TextBlock x:Name="maghribTextBlock" TextAlignment="Left" VerticalAlignment="Bottom" TextWrapping="Wrap" FontSize="30" Text="Maghrib" Height="60" HorizontalAlignment="Stretch" />
+                            <TextBlock x:Name="ishaTextBlock" TextAlignment="Left" VerticalAlignment="Bottom" TextWrapping="Wrap" FontSize="30" Text="Ishaa" Height="60" HorizontalAlignment="Stretch" />
+                        </StackPanel>
+                        <StackPanel HorizontalAlignment="Right"  VerticalAlignment="Top" Height="330" Margin="70,0,0,0" >
+                            <TextBlock x:Name="fajrTimeTextBlock" TextAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" FontSize="30" Text="00:00" Height="60" HorizontalAlignment="Stretch" />
+                            <TextBlock x:Name="zuhrTimeTextBlock" TextAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" FontSize="30" Text="00:00" Height="60" HorizontalAlignment="Stretch" />
+                            <TextBlock x:Name="asrTimeTextBlock" TextAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" FontSize="30" Text="00:00" Height="60" HorizontalAlignment="Stretch" />
+                            <TextBlock x:Name="maghribTimeTextBlock" TextAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" FontSize="30" Text="00:00" Height="60" HorizontalAlignment="Stretch" />
+                            <TextBlock x:Name="ishaTimeTextBlock" TextAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" FontSize="30" Text="00:00" Height="60" HorizontalAlignment="Stretch" />
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <Grid HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                <Image x:Name="massageImage"  Visibility="Visible" VerticalAlignment="Center" Height="150" HorizontalAlignment="Stretch"  Source="/images/bbbbb.png"/>
+                <Button x:Name="massageButton" Visibility="Visible" HorizontalAlignment="Center"  VerticalAlignment="Top"  Content="Button" Height="75" Width="100"  >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image x:Name="massageImage" Visibility="Visible"  VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Source="/images/massage.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" Width="150"  Margin="0,60">
+                    <Button x:Name="likeButton" Visibility="Visible" HorizontalAlignment="Center"  VerticalAlignment="Center"  Content="Button" Height="50" Width="50" >
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image x:Name="likeImage" Visibility="Visible"  VerticalAlignment="Center" HorizontalAlignment="Center" Width="50" Source="/images/like.jpg"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="loveButton" Visibility="Visible" HorizontalAlignment="Center"  VerticalAlignment="Center"  Content="Button" Height="50" Width="50" >
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image x:Name="loveImage" Visibility="Visible"  VerticalAlignment="Top" HorizontalAlignment="Center" Width="50" Source="/images/love.jpg"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="shareButton" Visibility="Visible" HorizontalAlignment="Center"  VerticalAlignment="Center"  Content="Button" Height="50" Width="50" >
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image x:Name="shareImage" Visibility="Visible"  VerticalAlignment="Top" HorizontalAlignment="Center" Width="50" Source="/images/share.jpg"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+                <Image x:Name="image4" VerticalAlignment="Bottom" Height="23" Source="/images/slide3.jpg" Margin="0,0,0,15" />
+                <StackPanel Name="NoConnectionPanel2" Visibility="Collapsed" HorizontalAlignment="Center" Height="258"  VerticalAlignment="Center" Width="290">
+                    <Image x:Name="noConnectionImage3" Visibility="Visible"  VerticalAlignment="Top" HorizontalAlignment="Center" Width="150" Source="/images/No-Connection.jpg"/>
+                    <TextBlock x:Name="NoConnectionTextBlock3" Visibility="Visible" TextAlignment="Center" VerticalAlignment="Bottom" TextWrapping="Wrap" FontSize="30" Text="No Connection!!" Height="60" HorizontalAlignment="Stretch" />
+                </StackPanel>
+                <Button x:Name="girlsButton3" Visibility="Collapsed" HorizontalAlignment="Left"  VerticalAlignment="Top"  Content="Button" Height="77" Width="150" Click="GirlsButton_Click" >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <StackPanel Name="backStackP" Orientation="Horizontal" HorizontalAlignment="Left"   VerticalAlignment="Top">
+                                <Image x:Name="girlBack" HorizontalAlignment="Right"  VerticalAlignment="Center" Width="40" Height="40" Source="/images/back2.png" />
+                                <Image x:Name="Back" HorizontalAlignment="Right"  VerticalAlignment="Top" Width="77" Height="77" Source="/images/girls.png" />
+                            </StackPanel>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="BoysButton3" Visibility="Collapsed" HorizontalAlignment="Left"  VerticalAlignment="Top"  Content="Button" Height="77" Width="150" Click="BoysButton_Click" >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <StackPanel Name="backStackP" Orientation="Horizontal" HorizontalAlignment="Left"   VerticalAlignment="Top">
+                                <Image x:Name="girlBack" HorizontalAlignment="Right"  VerticalAlignment="Center" Width="40" Height="40" Source="/images/back2.png" />
+                                <Image x:Name="Back" HorizontalAlignment="Right"  VerticalAlignment="Top" Width="77" Height="77" Source="/images/aaa.png" />
+                            </StackPanel>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+        </FlipView>
+    </Grid>
+</Page>
